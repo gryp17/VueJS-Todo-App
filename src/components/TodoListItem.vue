@@ -34,7 +34,7 @@
 
 <style lang="scss">
 	
-	.todo-list-item {		
+	.todo-list-item {
 		padding: 20px;
 
 		& + .todo-list-item {

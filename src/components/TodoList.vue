@@ -29,18 +29,18 @@
 </template>
 
 <script>
-    import TodoListItem from './TodoListItem.vue'
+	import TodoListItem from './TodoListItem.vue'
 
 	export default {
 		name: 'TodoList',
-        components: {
-            TodoListItem
-        },
-        data: function () {
-            return {
-                taskText: ''
-            }
-        },
+		components: {
+			TodoListItem
+		},
+		data: function () {
+			return {
+				taskText: ''
+			}
+		},
 		created: function () {
 			this.$store.dispatch('getTodoTasks')
 		},
@@ -49,7 +49,7 @@
 				return this.$store.state.todos
 			}
 		},
-        methods: {
+		methods: {
 			addTask: function () {
 				this.$store.dispatch('addTask', this.taskText)
 				this.taskText = ''
@@ -60,15 +60,15 @@
 					completed
 				})
 			},
-            deleteTask: function (id) {
+			deleteTask: function (id) {
 				this.$store.dispatch('deleteTask', id)
 			}
-        }
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
-    .todo-list {
+	.todo-list {
 		$border: solid 1px #c2cfe5;
 		border: $border;
 		border-radius: 4px;
@@ -89,5 +89,5 @@
 			padding: 20px;
 			color: #909399;
 		}
-    }
+	}
 </style>
