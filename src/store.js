@@ -9,15 +9,15 @@ export default {
 			state.todos = todos
 		},
 		addTask: function (state, task) {
-			state.todos = [...state.todos, task]
+			state.todos.push(task)
 		},
 		deleteTask: function (state, id) {
-			state.todos = [...state.todos].filter((task) => {
+			state.todos = state.todos.filter((task) => {
 				return task.id !== id
 			})
 		},
 		setCompletedStatus: function (state, updatedTask) {
-			state.todos = [...state.todos].map((task) => {
+			state.todos = state.todos.map((task) => {
 				if (task.id === updatedTask.id) {
 					task.completed = updatedTask.completed
 				}
